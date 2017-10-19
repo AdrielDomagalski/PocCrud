@@ -23,9 +23,9 @@ public abstract class Person {
     }
 
     public void setDataNascimento(String dataNascimento) throws ParseException {
-        this.dataNascimento = dataNascimento;
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
         Date dt = df.parse(dataNascimento);
+        this.dataNascimento = dt.toString();
     }
 
     public String getCpf() {

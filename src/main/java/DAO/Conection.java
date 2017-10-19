@@ -8,7 +8,7 @@ public class Conection {
     private String driver = "com.mysql.jdbc.Driver";
     private String caminho = "jdbc:mysql://localhost:3306/projetocrud";
     private String usuario = "root";
-    private String senha = "";
+    private String senha = "140397";
     public Connection con;
 
     public void  Conexão()
@@ -17,6 +17,7 @@ public class Conection {
         try {
             System.setProperty("jdbc.Drivers", driver);
             con = DriverManager.getConnection(caminho, usuario, senha);
+            System.out.print("Conectei");
         } catch (SQLException ex) {
             System.out.println("erro: " + ex);
         }

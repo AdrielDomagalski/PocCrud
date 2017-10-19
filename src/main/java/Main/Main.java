@@ -1,7 +1,10 @@
 package Main;
 
+import Negocio.CarRental;
 import Negocio.OficialRegistration;
-import Negocio.driverRegistration;
+import Negocio.DriverRegistration;
+import Pojo.Rent;
+
 import java.text.ParseException;
 import java.util.Scanner;
 
@@ -10,7 +13,8 @@ public class Main {
     public static void main(String[] args) throws ParseException {
         Scanner ler = new Scanner(System.in);
         OficialRegistration oficialRegistration = new OficialRegistration();
-        driverRegistration driverRegistration = new driverRegistration();
+        DriverRegistration driverRegistration = new DriverRegistration();
+        CarRental carRental = new CarRental();
 
         System.out.println("Menu");
         System.out.println("Escolha uma opção:");
@@ -29,7 +33,7 @@ public class Main {
                 driverRegistration.executaRegistration();
                 break;
             case 3:
-
+                carRental.newRent();
                 break;
             case 5:
                 System.out.println("Até Logo...");

@@ -6,7 +6,7 @@ import Pojo.Driver;
 import java.text.ParseException;
 import java.util.Scanner;
 
-public class driverRegistration {
+public class DriverRegistration {
     Driver driver = new Driver();
     DriverDAO driverDAO = new DriverDAO();
     Scanner ler = new Scanner(System.in);
