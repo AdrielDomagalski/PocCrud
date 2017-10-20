@@ -15,21 +15,21 @@ public class CarRental {
     RentDAO rentDAO = new RentDAO();
     Scanner ler = new Scanner(System.in);
 
-    public void newRent() throws ParseException {
-        Date dataEntrega, dataDevolucao;
-        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-        System.out.print("Data Entrega");
+    public void newRent() {
+        System.out.println("informe o Id do motorista:");
+        rent.setId_driver(ler.nextInt());
+
+        System.out.println("Data Entrega:");
         rent.setDataEntrega(ler.next());
 
-        System.out.print("Data Devolução");
+        System.out.println("Data Devolução:");
         rent.setDataDevolucao(ler.next());
 
-        dataEntrega = df.parse(rent.getDataEntrega());
-        dataDevolucao = df.parse(rent.getDataDevolucao());
-
-        long dt = (dataEntrega.getTime() - dataDevolucao.getTime()) + 3600000;
-
-        System.out.print("o carro será alugado por " + dt + " dias");
+        System.out.println("Dias Totais:");
+        double dias = ler.nextDouble();
+        double precoDias = 5;
+        double precoTotal = dias * precoDias;
+        rent.setValor_total(precoTotal);
 
         rentDAO.salvar(rent);
     }

@@ -14,11 +14,14 @@ public class RentDAO {
         conn.Conexão();
 
         try {
-            stmt = conn.con.prepareStatement("INSERT INTO rent (data_entrada, data_devolucao) VALUES(?,?);");
+            stmt = conn.con.prepareStatement("INSERT INTO rent (id_driver, data_entrada, data_devolucao, valor_total) VALUES(?,?,?,?)");
 
-            stmt.setString(1, rent.getDataEntrega());
-            stmt.setString(2, rent.getDataDevolucao());
-            stmt.executeQuery();
+            stmt.setInt(1, rent.getId_driver());
+            stmt.setString(2, rent.getDataEntrega());
+            stmt.setString(3,rent.getDataDevolucao() );
+            stmt.setDouble(4, rent.getValor_total());
+            stmt.execute();
+            System.out.println("Aluguel efetuado com sucesso");
             return true;
         } catch (SQLException ex) {
             return false;
