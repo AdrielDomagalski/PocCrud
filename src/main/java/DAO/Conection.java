@@ -17,7 +17,6 @@ public class Conection {
         try {
             System.setProperty("jdbc.Drivers", driver);
             con = DriverManager.getConnection(caminho, usuario, senha);
-            System.out.print("Conectei");
         } catch (SQLException ex) {
             System.out.println("erro: " + ex);
         }

@@ -11,7 +11,7 @@ public class DriverRegistration {
     DriverDAO driverDAO = new DriverDAO();
     Scanner ler = new Scanner(System.in);
 
-    public void executaRegistration() throws ParseException {
+    public void executaRegistration() {
         System.out.println("Nome:");
         driver.setNome(ler.next());
 

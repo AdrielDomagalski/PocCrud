@@ -25,23 +25,33 @@ public class Main {
 
         int opcao = ler.nextInt();
 
-        switch(opcao){
-            case 1:
-                oficialRegistration.executeRegistration();
-                break;
-            case 2:
-                driverRegistration.executaRegistration();
-                break;
-            case 3:
-                carRental.newRent();
-                break;
-            case 5:
-                System.out.println("Até Logo...");
-                break;
-            default:
-                System.out.println("Por favor, digite uma opção válida");
-                break;
-        }
+        while (opcao != 0){
+            System.out.println("Menu");
+            System.out.println("Escolha uma opção:");
+            System.out.println("1 - Cadastro Funcionario");
+            System.out.println("2 - Cadastro Motorista");
+            System.out.println("3 - Realizar Aluguel");
+            System.out.println("Opção: ");
+            int a = ler.nextInt();
 
+            switch(a){
+                case 1:
+                    oficialRegistration.executeRegistration();
+                    break;
+                case 2:
+                    driverRegistration.executaRegistration();
+                    break;
+                case 3:
+                    carRental.newRent();
+                    break;
+                case 0:
+                    System.out.println("Até Logo...");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Por favor, digite uma opção válida");
+                    break;
+            }
+        }
     }
 }

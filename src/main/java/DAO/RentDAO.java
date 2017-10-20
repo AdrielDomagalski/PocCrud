@@ -51,7 +51,7 @@ public class RentDAO {
         try{
             stmt = conn.con.prepareStatement("UPDATE rent SET data_devolucao = ? WHERE id = ?");
             stmt.setString(1,rent.getDataDevolucao());
-            //stmt.setString(2, rent.getId());
+            //stmt.setInt(2, rent.getId());
             stmt.executeQuery();
 
             return true;

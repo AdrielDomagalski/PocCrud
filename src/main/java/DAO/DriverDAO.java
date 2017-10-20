@@ -19,10 +19,11 @@ public class DriverDAO {
             stmt = conn.con.prepareStatement("INSERT INTO driver ( nome, data_nascimento, cpf, cnh) VALUES(?,?,?,?);");
 
             stmt.setString(1, driver.getNome());
-            stmt.setString(2, driver.getDataNascimento().toString());
+            stmt.setString(2, driver.getDataNascimento());
             stmt.setString(3, driver.getCpf());
             stmt.setString(4, driver.getNumeroCNH());
-            stmt.executeQuery();
+            stmt.execute();
+            System.out.println("Inserido com sucesso");
             return true;
         } catch (SQLException ex) {
             return false;
